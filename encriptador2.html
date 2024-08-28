@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1110107d;
+        }
+        .container {
+            text-align: center;
+            background: #9090ad;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+    <div></div>
+    <img src="Muñeco.png" alt="Imagen de muñeco explorando">
+</head>
+<body>
+
+<div class="container">
+    <main class="presentacion"></main>
+    <h1>SUPER ENCRIPTADOR DE TEXTO</h1>
+    <textarea id="inputText" placeholder="Ingrese el texto aquí solo letras minúsculas y sin acento..."></textarea>
+    <textarea id="outputText" placeholder="Resultado..."></textarea>
+    <br>
+    <button onclick="encriptar()">Encriptar</button>
+    <button onclick="desencriptar()">Desencriptar</button>
+</div>
+
+<script>
+    function encriptar() {
+        let texto = document.getElementById("inputText").value;
+        let textoEncriptado = texto.replace(/e/g, "enter")
+                                   .replace(/i/g, "imes")
+                                   .replace(/a/g, "ai")
+                                   .replace(/o/g, "ober")
+                                   .replace(/u/g, "ufat");
+        document.getElementById("outputText").value = textoEncriptado;
+    }
+
+    function desencriptar() {
+        let texto = document.getElementById("inputText").value;
+        let textoDesencriptado = texto.replace(/enter/g, "e")
+                                      .replace(/imes/g, "i")
+                                      .replace(/ai/g, "a")
+                                      .replace(/ober/g, "o")
+                                      .replace(/ufat/g, "u");
+        document.getElementById("outputText").value = textoDesencriptado;
+    }
+</script>
+
+</body>
+</html>
